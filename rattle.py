@@ -30,10 +30,11 @@ while Rattle == True:
   elif Rattle_Command == "N" or Rattle_Command == "New":
     Rattle_Temp = True
     os.system('cls')
+    titlebar()
     Rattle_Subcommand = input("PATH: ")
     with open(Rattle_Subcommand, "w") as filer:
       os.system('cls')
-      titlebar()
+      print("Write Code Here...")
       while Rattle_Temp == True:
         me = input()
         if me != "$EXIT":
