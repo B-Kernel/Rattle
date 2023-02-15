@@ -4,7 +4,7 @@ import subprocess
 os.system('color 1f')
 Rattle = True
 def titlebar():
-  print("(N)ew","(C)ompile","(O)pen","(E)xit")
+  print("(N)ew","(C)ompile","(O)pen","(E)xit", "(D)ebug")
 titlebar()
 time.sleep(1)
 while Rattle == True:
@@ -42,3 +42,23 @@ while Rattle == True:
           filer.write("\n")
         else:
           break
+  elif Rattle_Command == "O" or Rattle_Command == "Open":
+    Rattle_Temp = True
+    os.system('cls')
+    titlebar()
+    Rattle_Subcommand = input("PATH: ")
+    with open(Rattle_Subcommand, 'a') as filer:
+      with open(Rattle_Subcommand, 'r') as reader:
+        os.system('cls')
+        file_read = reader.readlines()
+        for i in file_read:
+          print(i)
+        while Rattle_Temp == True:
+          me = input()
+          if me != "$EXIT":
+            filer.write(me)
+            filer.write("\n")
+          else:
+            break
+  elif Rattle_Command == "D" or Rattle_Command == "Debug":
+    pass
